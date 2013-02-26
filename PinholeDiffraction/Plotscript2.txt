@@ -1,0 +1,31 @@
+set term pdf
+set xlabel 'x'
+
+
+#set label 1 "y" at 109.55,0.03
+set ylabel 'y'
+
+
+set zlabel 'Energy'
+
+
+set cblabel 'Energy (keV)'
+
+set view map
+#set cbrange [4.229:4.274]
+#set palette defined (4.2285 "red", 4.275 "blue")
+
+#set cbrange [4.2285:8.5485]
+set cbrange [4.0:9.0]
+set palette defined (4.0 "red", 4.2285 "red", 4.275 "blue", 5.9835 "green", 6.0455 "black", 7.3265 "orange", 7.4045 "cyan", 8.46 "yellow", 8.5485 "pink", 9.0 "pink")
+
+#set ytics 1
+#set xtics 1
+
+set output "Plot2.pdf"
+unset key
+splot "DiffractResultsPostPinhole.txt" using 1:2:($3 > 3 ? $3 : 1/0) with points palette pt 6 ps 0.35, \
+	"DiffractResultsPostPinhole.txt" using 1:2:($3 < 3 ? 5 : 1/0) with points pt 1 ps 1 linecolor rgb "red", \
+	"FluoResultsPostPinhole.txt" using 1:2:(5) with points pt 1 ps 1 linecolor rgb "green"
+
+ 

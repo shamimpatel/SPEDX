@@ -1,0 +1,16 @@
+set term pdf
+set xlabel 'x'
+
+set ylabel 'Energy'
+
+
+set yrange [8.7:9.0]
+
+
+set output "Plot.pdf"
+unset key
+plot "CCDDiffractSpectrum.txt" using 1:3 with points
+	
+	
+#splot "DiffractResults.txt" using 1:2:($3 < 4.9 ? $3 : 1/0) with points palette pt 0	 
+#splot "DiffractResults.txt" using 1:2:3 with points palette pt 0	 

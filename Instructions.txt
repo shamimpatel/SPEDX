@@ -1,0 +1,10 @@
+Run Diffract Probs
+Run Python Script
+copy ProcessedResults
+Run Diffract2
+Plot (if you want)
+Copy AdvDiffract&AdvFluo
+Run PinholeDiffract
+Plot
+run python spectrum script
+plot
